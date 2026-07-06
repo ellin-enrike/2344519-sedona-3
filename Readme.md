@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Элина Пожидаева](https://up.htmlacademy.ru/htmlcss-individual/3/user/2344519).
-* Наставник: [Анна Лисененкова](https://htmlacademy.ru/profile/id85590).
+* Наставник: [Анна Лисененковааа](https://htmlacademy.ru/profile/id85590).
 
 ---
 
