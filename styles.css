@@ -760,6 +760,7 @@ body {
 .button-favorite {
   background-color: var(--bg-color-first);
   width: auto;
+  background-color: #FF5757;
 }
 
 .button-favorite-checked {
