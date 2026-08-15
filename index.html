@@ -11,7 +11,7 @@
     <div class="container">
     <header class="header">
       <a class="logo-link" href="index.html" aria-current="page">
-        <img class="logo" src="images/svg/logotypes/sedona-logo.svg" width="138" height="64"
+        <img class="logo" src="images/svg/logotypes/sedona-logo.svg" width="140" height="70"
           alt="Логотип Седоны">
       </a>
       <nav class="navigation">
@@ -44,7 +44,7 @@
         </ul>
       </nav>
     </header>
-    <main class="main">
+    <main class="main-container">
       <section class="hero">
         <h1 class="visually-hidden">Седона</h1>
         <img class="hero-banner" src="images/svg/hero/hero-welcome-group.svg" width="458" height="352"
@@ -59,9 +59,7 @@
             <h3 class="card-title">Настоящий городок</h3>
             <p class="card-description">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
             </div>
-          </li>
-          <li class="advantages-item">
-            <img src="images/advantages/real-city.jpg" width="800" height="385" alt="Улица Седоны">
+            <img class="advantages-image" src="images/advantages/real-city.jpg" width="800" height="385" alt="Улица Седоны">
           </li>
           <li class="advantages-item">
             <div class="card card-light">
@@ -83,8 +81,6 @@
           </li>
           <li class="advantages-item">
             <img src="images/advantages/bridge.jpg" width="800" height="385" alt="Мост">
-          </li>
-          <li class="advantages-item">
             <div class="card">
             <h3 class="card-title">Там есть мост дьявола</h3>
             <p class="card-description">Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
@@ -135,39 +131,39 @@
         <p class="subscription-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
       <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
         <label for="subscription-email" class="visually-hidden">Ваш e-mail</label>
-        <input type="email" placeholder="Введите Ваш e-mail" id="subscription-email" name="subscription-email" required>
+        <input type="email" placeholder="Ваш e-mail" id="subscription-email" name="subscription-email" required>
         <button class="button button-subscription" type="submit">Подписаться</button>
       </form>
       </section>
     </main>
-    <footer class="page-footer">
-      <section class="contacts">
-        <h2 class="visually-hidden">Контакты</h2>
-        <ul class="contacts-list">
-          <li class="contacts-list-item">
+    <footer class="footer">
+      <section class="footer-info">
+        <h2 class="visually-hidden">Социальные сети, телефон и ссылка на разработчика сайта </h2>
+        <ul class="footer-info-list">
+          <li class="footer-info-item">
             <a class="social-link" href="https://vk.com/htmlacademy">
               <span class="visually-hidden">Группа Vkontakte</span>
             </a>
+            </li>
+            <li class="footer-info-item">
             <a class="social-link" href="https://t.me/htmlacademy">
               <span class="visually-hidden">Telegram-канал</span>
             </a>
+            </li>
+            <li class="footer-info-item">
             <a class="social-link" href="https://www.youtube.com/user/htmlacademyru">
               <span class="visually-hidden">Youtube-канал</span>
             </a>
           </li>
-          <li class="contacts-list-item">
-            <a class="contacts-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+          </ul>
+            <a class="footer-info-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
             <span class="visually-hidden">Телефон</span>
-          </li>
-          <li class="contacts-list-item">
             <a class="htmlacademy-link" href="https://htmlacademy.ru/intensive/htmlcss">
               <span class="visually-hidden">Логотип разработчика сайта -htmlacademy</span>
             </a>
-          </li>
-        </ul>
       </section>
     </footer>
     </div>
-  </body>
+   </body>
 
 </html>
