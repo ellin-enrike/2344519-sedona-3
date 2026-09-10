@@ -10,7 +10,7 @@
 
   <body>
     <div class="container">
-      <header class="header">
+      <header class="header" data-test="header">
         <a class="logo-link" href="index.html" aria-current="page">
           <img class="logo" src="images/svg/logotypes/sedona-logo.svg" width="140" height="70" alt="Логотип Седоны">
         </a>
@@ -28,12 +28,12 @@
           </ul>
           <ul class="navigation-user-list">
             <li class="navigation-user-item">
-              <a class="navigation-user-link" href="#">
+              <a class="navigation-user-link navigation-user-link-search" href="#">
                 <span class="visually-hidden">Поиск</span>
               </a>
             </li>
             <li class="navigation-user-item">
-              <a class="navigation-user-link" href="#">
+              <a class="navigation-user-link navigation-user-link-count" href="#">
                 <span class="visually-hidden">Отелей в избранном:</span>
                 <span class="count">12</span>
               </a>
@@ -44,8 +44,8 @@
           </ul>
         </nav>
       </header>
-      <main class="main-container">
-        <section class="hero">
+      <main class="main-container" data-test="main">
+        <section class="hero" data-test="hero">
           <h1 class="visually-hidden">Седона</h1>
           <img class="hero-banner" src="images/svg/hero/hero-welcome-group.svg" width="458" height="352"
             alt="Welcome to the gorgeous Sedona, because the Grand Canyon sucks!">
@@ -136,13 +136,12 @@
           <p class="section-description subscription-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
           <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
             <label for="subscription-email" class="visually-hidden">Ваш e-mail</label>
-            <input type="email" placeholder="Ваш e-mail" id="subscription-email" name="subscription-email" required>
+            <input class="subscription-email" type="email" placeholder="Ваш e-mail" id="subscription-email" name="subscription-email" required>
             <button class="button button-subscription" type="submit">Подписаться</button>
           </form>
         </section>
       </main>
-      <footer class="footer">
-        <section class="footer-info">
+      <footer class="footer" data-test="footer">
           <h2 class="visually-hidden">Социальные сети, телефон и ссылка на разработчика сайта</h2>
           <ul class="footer-info-list">
             <li class="footer-info-item">
@@ -161,14 +160,72 @@
               </a>
             </li>
           </ul>
+          <div class="footer-info-contacts">
           <a class="footer-info-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
           <span class="visually-hidden">Телефон для бронирования</span>
-          <a class="htmlacademy-link" href="https://htmlacademy.ru/intensive/htmlcss">
+          </div>
+          <a class="dev-link" href="https://htmlacademy.ru/intensive/htmlcss">
             <span class="visually-hidden">Логотип разработчика сайта -htmlacademy</span>
           </a>
-        </section>
       </footer>
     </div>
+    <div class="modal-container modal-container-close">
+      <div class="modal modal-auth">
+        <button class="modal-close-button">
+          <span class="visually-hidden">Закрыть</span>
+        </button>
+        <section class="modal-content">
+          <h2 class="modal-title">Поиск гостиницы в Седоне</h2>
+          <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
+            <div class="field-item">
+              <label class="form-label" for="check-in-date">Дата заезда:</label>
+              <input id="check-in-date" class="date-input" type="text" name="check-in-date" value="27 апреля 2020"
+                placeholder="Укажите дату" required>
+              <p class="form-message form-message-error">Мы не можем отправить вас в прошлое.</p>
+            </div>
+            <div class="field-item">
+              <label class="form-label" for="check-out-date">Дата выезда:</label>
+              <input id="check-out-date" class="input date-input" type="text" name="check-out-date"
+                value="1 сентября 2023" placeholder="Укажите дату" required>
+              <p class="form-message">На эти даты есть свободные номера. Пока есть.</p>
+            </div>
+            <div class="field-item">
+              <label class="form-label" for="adult">Взрослые:</label>
+              <div class="counter">
+                <button class="counter-button counter-button-minus" type="button">
+                  <span class="visually-hidden">Уменьшить количество</span>
+                </button>
+                <input id="adult" class="input modal-number" type="number" name="adult" value="2">
+                <button class="counter-button counter-button-plus" type="button">
+                  <span class="visually-hidden">Увеличить количество</span>
+                </button>
+              </div>
+            </div>
+            <div class="field-item">
+              <div class="tooltip-wrapper">
+                <label class="form-label" for="children">Дети:</label>
+                <button class="info-button" type="button" aria-labelledby="tooltip-label-date">
+                  <span class="visually-hidden">Посмотреть дополнительную информацию</span>
+                </button>
+                <div class="tooltip" role="tooltip" id="tooltip-label-date">Укажите количество детей, которые будут
+                  с&nbsp;вами, возраст которых от&nbsp;6&nbsp;до&nbsp;18&nbsp;лет. Дети до&nbsp;6&nbsp;лет размещаются
+                  бесплатно.
+                </div>
+              </div>
+              <div class="counter">
+                <button class="counter-button counter-button-minus" type="button">
+                  <span class="visually-hidden">Уменьшить количество</span>
+                </button>
+                <input id="children" class="input modal-number" type="number" name="children" value="2">
+                <button class="counter-button counter-button-plus" type="button">
+                  <span class="visually-hidden">Увеличить количество</span>
+                </button>
+              </div>
+            </div>
+            <button class="button modal-button" type="submit">Найти</button>
+          </form>
+        </section>
+      </div>
+    </div>
   </body>
-
 </html>
