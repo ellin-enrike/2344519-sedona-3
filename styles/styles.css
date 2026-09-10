@@ -767,7 +767,7 @@ img {
 
 .modal-container-close {
   display: none;
-} 
+}
 
 .modal-auth {
   position: relative;
@@ -1321,7 +1321,7 @@ img {
 .range-scale {
   position: relative;
   height: 4px;
-  background-color: green;
+  background-color: var(--color-white-transparent-30);
 }
 
 .range-bar {
