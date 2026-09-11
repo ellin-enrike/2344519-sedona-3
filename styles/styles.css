@@ -53,11 +53,10 @@
   /*Плэйсхолер*/
   --color-placeholder-one: rgba(0, 0, 0, 0.6);
   --color-placeholder-two: rgba(0, 0, 0, 0.3);
+  --color-placeholder-three: rgba(0, 0, 0, 1)
+    /*Кнопки*/
 
-
-  /*Кнопки*/
-
-  --btn-bg-one: #756157;
+    --btn-bg-one: #756157;
   --btn-bg-hover-one: #615048;
   --btn-bg-three: #83B3D3;
 
@@ -72,6 +71,7 @@
   --text-color-disabled: #0000004D;
   --color-black-transparent-30: rgba(0, 0, 0, 0.3);
   --color-white-transparent-30: rgba(255, 255, 255, 0.3);
+  --color-white-transparent-60: rgba(255, 255, 255, 0.6);
 
 
   /*Teнь*/
@@ -206,6 +206,17 @@ img {
 }
 
 .navigation-link-current::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bottom-line-nav);
+}
+
+
+.navigation-link-current-hotels::after {
   content: "";
   position: absolute;
   bottom: -20px;
@@ -784,10 +795,9 @@ img {
   z-index: 2;
 }
 
-/*
 .modal-container-close {
   display: none;
-} */
+}
 
 .modal-auth {
   position: relative;
@@ -874,7 +884,8 @@ img {
 }
 
 .date-input::placeholder {
-  color: var(--color-placeholder-two);
+  color: var(--color-placeholder-three);
+  opacity: 60%;
   font-weight: 400;
 }
 
@@ -934,7 +945,7 @@ img {
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
-  background-color: var(--text-color-dark);
+  background-color: var(--color-placeholder-two);
   transition: background-color 0.3s ease;
 }
 
@@ -946,7 +957,6 @@ img {
 
 .counter-button-plus::before {
   mask-image: url("../images/svg/plus.svg");
-  background-color: var(--text-color-dark);
 
 }
 
@@ -1168,7 +1178,7 @@ img {
 }
 
 .filter-breadcrumbs-link-home:hover::before {
-  background-color: var(--text-color-active);
+  background-color: var(--color-white-transparent-60);
 }
 
 .filter-breadcrumbs-link:hover {
@@ -1268,6 +1278,22 @@ img {
   mask-position: center;
   mask-size: contain;
   background-color: var(--checkbox-color-one);
+}
+
+.control:hover {
+  color: var(--color-white-transparent-60);
+}
+
+.control:hover .control-input {
+  background-color: var(--color-white-transparent-60);
+}
+
+.control:active {
+  color: var(--text-color-active);
+}
+
+.control:active .control-input {
+  background-color: var(--text-color-active);
 }
 
 .control-input[type="radio"] {
