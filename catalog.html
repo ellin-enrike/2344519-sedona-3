@@ -11,19 +11,19 @@
   <body>
     <div class="container">
       <header class="header" data-test="header">
-        <a class="logo-link" href="index.html" aria-current="page">
+        <a class="logo-link" href="index.html">
           <img class="logo" src="images/svg/logotypes/sedona-logo.svg" width="140" height="70" alt="Логотип Седоны">
         </a>
         <nav class="navigation">
           <ul class="navigation-list">
             <li class="navigation-item">
-              <a class="navigation-link navigation-link-current" href="index.html" aria-current="page">Главная</a>
+              <a class="navigation-link navigation-link-current" href="index.html">Главная</a>
             </li>
             <li class="navigation-item">
-              <a class="navigation-link" href="about.html">О Седоне</a>
+              <a class="navigation-link" href="#">О Седоне</a>
             </li>
             <li class="navigation-item">
-              <a class="navigation-link" href="catalog.html">Гостиницы</a>
+              <a class="navigation-link" href="catalog.html" aria-current="page">Гостиницы</a>
             </li>
           </ul>
           <ul class="navigation-user-list">
@@ -111,11 +111,11 @@
 
                 <div class="range-field">
                 <div class="range-input-wrapper">
-                  <input class="input range-input" type="number" name="price-from" value="0" id="from">
+                  <input class="input range-input" type="number" name="price-from" value="0" id="from" placeholder="Цена">
                   <label class="range-label" for="from">От</label>
                 </div>
                 <div class="range-input-wrapper">
-                  <input class="input range-input" type="number" name="price-to" value="9000" id="to">
+                  <input class="input range-input" type="number" name="price-to" value="9000" id="to" placeholder="Цена">
                   <label class="range-label" for="to">До</label>
                 </div>
               </div>
@@ -181,7 +181,7 @@
               <button class="button button-favorite" type="button">В избранное
                 <span class="visually-hidden">В избранное</span>
               </button>
-              <p class="stars">
+              <p class="stars stars-four">
                 <span class="visually-hidden">Четыре звезды</span>
               </p>
               <p class="rating">Рейтинг: 8,5</p>
@@ -201,7 +201,7 @@
                 <button class="button button-favorite button-favorite-checked" type="button">В избранном
                   <span class="visually-hidden">В избранное</span>
                 </button>
-                <p class="stars"></p>
+                <p class="stars stars-four"></p>
                 <span class="visually-hidden">Четыре звезды</span>
                 <p class="rating">Рейтинг: 9,2</p>
                 </li>
@@ -248,7 +248,7 @@
           </ul>
           <ul class="pagination">
             <li class="pagination-item">
-              <a class="pagination-link pagination-current" href="#" aria-current="page">1</a>
+              <span class="pagination-current">1</span>
             </li>
             <li class="pagination-item">
               <a class="pagination-link" href="#">2</a>
@@ -297,10 +297,11 @@
             </li>
           </ul>
           <div class="footer-info-contacts">
-          <a class="footer-info-phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+          <a class="footer-info-phone" href="tel:+78128121212">+7 (812) 812-12-12
           <span class="visually-hidden">Телефон для бронирования</span>
+          </a>
           </div>
-          <a class="dev-link" href="https://htmlacademy.ru/intensive/htmlcss">
+          <a class="dev-link" href="https://htmlacademy.ru/intensive/htmlcss" target="_blank">
             <span class="visually-hidden">Логотип разработчика сайта -htmlacademy</span>
           </a>
       </footer>
