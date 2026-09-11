@@ -84,7 +84,7 @@
   --border-bottom-color: #E6E6E6;
   --outline-one: #83B3D3;
   --outline-two: #68A2CA;
-  --bg-color-disabled:  #0000004D;
+  --bg-color-disabled: #0000004D;
 
   /*Линии*/
 
@@ -112,6 +112,7 @@ img {
   height: auto;
   object-fit: contain;
 }
+
 *,
 *::before,
 *::after {
@@ -265,6 +266,7 @@ img {
   cursor: pointer;
   transition: opacity 0.3s ease;
 }
+
 .navigation-user-item:last-child {
   flex-shrink: 0;
 }
@@ -781,6 +783,7 @@ img {
   background-color: var(--bg-color-modal);
   z-index: 2;
 }
+
 /*
 .modal-container-close {
   display: none;
@@ -899,7 +902,7 @@ img {
   grid-template-columns: 36px 32px 36px;
   align-items: center;
   gap: 2px;
-  background-color:var(--bg-color-grey-lightest);
+  background-color: var(--bg-color-grey-lightest);
   border-radius: 4px;
   width: 110px;
 }
@@ -912,8 +915,8 @@ img {
   height: 100%;
   padding: 0;
   border: none;
-  background-color: var(--bg-color-grey-lightest);
   cursor: pointer;
+  background-color: var(--bg-color-grey-lightest);
 }
 
 .counter-button-minus {
@@ -1033,8 +1036,8 @@ img {
   height: 9px;
 }
 
-.info-button:hover + .tooltip,
-.info-button:focus + .tooltip {
+.info-button:hover+.tooltip,
+.info-button:focus+.tooltip {
   display: block;
 }
 
@@ -1304,7 +1307,7 @@ img {
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
-  background-color:var(--body-bg-color);
+  background-color: var(--body-bg-color);
   border: none;
   transition: background-color 0.3s ease;
 }
@@ -1694,29 +1697,29 @@ img {
 }
 
 .stars::after {
-    content: "";
-    position: absolute;
-    width: 18px;
-    height: 40px;
-    background-color: var(--basic-bg-color);
-    z-index: 2;
-    bottom: 0;
-    right: 0;
-  }
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 40px;
+  background-color: var(--basic-bg-color);
+  z-index: 2;
+  bottom: 0;
+  right: 0;
+}
 
 .stars-four::after {
   content: "";
-    width: 48px;
+  width: 48px;
 }
 
 .stars-three::after {
-    content: "";
-    width: 70px;
+  content: "";
+  width: 70px;
 }
 
 .stars-two::after {
-    content: "";
-    width: 92px;
+  content: "";
+  width: 92px;
 }
 
 .rating {
