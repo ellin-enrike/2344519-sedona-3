@@ -365,20 +365,21 @@ img {
 }
 
 .section-description {
-  font-family: var(--font-family-basic);
+  font-family: var(--font-family-basic), serif, sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 26px;
   display: flex;
   text-align: center;
-  margin: 0 auto;
   padding: 0;
+  max-width: 670px;
   color: var(--text-color-middle);
-  white-space: pre-line;
 }
 
 .advantages-description {
-  margin-bottom: 88px;
+  margin: 0 auto 88px;
+  padding: 0;
+
 }
 
 .advantages-list {
@@ -559,7 +560,7 @@ img {
 }
 
 .services-description {
-  margin-bottom: 64px;
+  margin: 0 0 64px 0;
 }
 
 .booking {
@@ -576,7 +577,7 @@ img {
 }
 
 .booking-description {
-  margin-bottom: 54px;
+  margin: 0 0 54px 0;
 }
 
 .button-booking {
@@ -666,7 +667,7 @@ img {
   grid-template-columns: min-content 1fr min-content;
   align-items: center;
   gap: 40px;
-  padding: 47px 70px 30px;
+  padding: 45px 70px 30px;
 }
 
 .footer-info-contacts {
