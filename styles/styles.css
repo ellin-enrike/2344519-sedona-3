@@ -54,8 +54,7 @@
 
   /*Плэйсхолер*/
   --color-placeholder-one: rgba(0, 0, 0, 0.6);
-  --color-placeholder-two: rgba(0, 0, 0, 0.3);
-  --color-placeholder-three: rgba(0, 0, 0, 1);
+
 
   /*Кнопки*/
 
@@ -75,6 +74,8 @@
   --color-black-transparent-30: rgba(0, 0, 0, 0.3);
   --color-white-transparent-30: rgba(255, 255, 255, 0.3);
   --color-white-transparent-60: rgba(255, 255, 255, 0.6);
+  --color-plus-minus-modal: rgba(117, 97, 87, 0.3);
+  --color-symbol-modal-hover: rgba(0, 0, 0, 1);
 
 
   /*Teнь*/
@@ -88,6 +89,7 @@
   --outline-one: #83B3D3;
   --outline-two: #68A2CA;
   --bg-color-disabled: #0000004D;
+  --color-counter-focus: rgba(130, 179, 211, 1);
 
   /*Линии*/
 
@@ -211,7 +213,7 @@ img {
 .navigation-link-current::after {
   content: "";
   position: absolute;
-  bottom: -20px;
+  bottom: -22px;
   left: 0;
   width: 100%;
   height: 2px;
@@ -238,7 +240,8 @@ img {
   line-height: 20px;
   text-transform: uppercase;
   text-decoration: none;
-  display: inline-block;
+  display: block;
+  box-sizing: border-box;
   padding: 8px 34px;
   border: none;
   border-radius: 4px;
@@ -258,17 +261,27 @@ img {
   color: var(--text-color-active);
 }
 
+.button:disabled {
+  border-color: var(--bg-color-disabled);
+  color: var(--text-color-middle);
+  pointer-events: none;
+  opacity: 0.3;
+}
+
 .navigation-user-list {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin: 0;
   padding: 0;
   list-style: none;
+  max-width: 330px;
 }
 
 .navigation-user-item {
   display: flex;
   width: auto;
+  max-width: 100%;
 }
 
 .navigation-user-link {
@@ -283,10 +296,6 @@ img {
 
 .navigation-user-item:last-child {
   flex-shrink: 0;
-}
-
-.navigation-user-item:last-child .button {
-  white-space: nowrap;
 }
 
 .navigation-user-link:hover {
@@ -451,7 +460,8 @@ img {
   line-height: 28px;
   text-align: center;
   text-transform: uppercase;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   white-space: pre-line;
 }
 
@@ -471,6 +481,7 @@ img {
 }
 
 .card-title-services {
+  display: block;
   margin: 0 0 30px 0;
   min-height: 28px;
   position: relative;
@@ -582,7 +593,7 @@ img {
 
 .button-booking {
   width: 376px;
-  height: 52px;
+  min-height: 52px;
   font-size: 20px;
   line-height: 36px;
 }
@@ -643,6 +654,7 @@ img {
 .button-subscription {
   background-color: var(--bg-color-first);
   padding: 8px 50px;
+  min-height: 52px;
   font-family: inherit;
   font-weight: 700;
   font-size: 20px;
@@ -651,6 +663,9 @@ img {
   text-transform: uppercase;
   border: none;
   border-radius: 0 4px 4px 0;
+  box-sizing: border-box;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .button-subscription:hover,
@@ -885,13 +900,15 @@ img {
 }
 
 .date-input {
-  user-select: none;
+  font-family: var(--font-family-basic), serif, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .date-input::placeholder {
-  color: var(--color-placeholder-three);
+  color: var(--color-placeholder-one);
   opacity: 60%;
-  font-weight: 400;
 }
 
 .date-input:hover,
@@ -924,6 +941,7 @@ img {
 }
 
 .counter-button {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -934,6 +952,28 @@ img {
   cursor: pointer;
   background-color: var(--bg-color-grey-lightest);
 }
+
+.counter-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  border: 3px solid transparent;
+  pointer-events: none;
+  transition: border-color 0.2s ease;
+}
+
+.counter-button:focus-visible {
+  outline: none;
+}
+
+.counter-button:focus-visible::after {
+  border-color: var(--color-counter-focus);
+}
+
 
 .counter-button-minus {
   border-radius: 4px 0 0 4px;
@@ -950,7 +990,7 @@ img {
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
-  background-color: var(--color-placeholder-two);
+  background-color: var(--color-plus-minus-modal);
   transition: background-color 0.3s ease;
 }
 
@@ -962,16 +1002,18 @@ img {
 
 .counter-button-plus::before {
   mask-image: url("../images/svg/plus.svg");
-
 }
 
-.counter-button:hover::before,
-.counter-button:focus::before {
-  background-color: var(--text-color-dark);
+.counter-button:hover::before {
+  background-color: var(--color-symbol-modal-hover);
+}
+
+.counter-button:focus-visible::before {
+  background-color: var(--color-symbol-modal-hover);
 }
 
 .counter-button:active::before {
-  background-color: var(--text-color-dark);
+  background-color: var(--color-plus-minus-modal);
 }
 
 .modal-number {
@@ -1057,6 +1099,10 @@ img {
 }
 
 .modal-button {
+  font-family: var(--font-family-basic), serif, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
   grid-column: 1 / -1;
   margin-top: 25px;
   max-width: 577px;
@@ -1106,11 +1152,12 @@ img {
 
 .filter {
   background-image: url("../images/background/filter.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: var(--bg-color-images);
   color: var(--text-color-light);
   padding: 35px 70px 70px;
   margin: 0;
-  align-items: start;
 
 }
 
@@ -1343,6 +1390,10 @@ img {
   transition: background-color 0.3s ease;
 }
 
+.range-input::placeholder {
+  color: var(--color-placeholder-one);
+}
+
 .input[type="number"]::-webkit-outer-spin-button,
 .input[type="number"]::-webkit-inner-spin-button {
   appearance: none;
@@ -1369,11 +1420,11 @@ img {
   transform: translateY(-50%);
   text-transform: lowercase;
   font-family: var(--font-family-basic), serif, sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 18px;
   line-height: 24px;
   text-align: right;
-  color: var(--color-placeholder-two);
+  color: var(--color-placeholder-one);
 }
 
 .range-scale {
@@ -1477,7 +1528,7 @@ img {
 }
 
 .custom-select:focus-visible {
-  border-color: var(--outline-two);
+  border-color: var(--text-color-dark);
   outline: none;
 }
 
@@ -1573,8 +1624,7 @@ img {
 .button-reset:focus-visible {
   color: var(--text-color-active);
   background-color: transparent;
-  outline: none;
-  border: 1px solid var(--outline-one);
+  outline-offset: 2px;
 }
 
 .button-reset:active {
@@ -1753,6 +1803,12 @@ img {
   width: 92px;
 }
 
+
+.stars-five::after {
+  content: "";
+  width: 18px;
+}
+
 .rating {
   margin: 0;
   padding: 0;
@@ -1858,6 +1914,7 @@ img {
   line-height: 36px;
   text-transform: uppercase;
   white-space: pre-line;
+  text-align: center;
 }
 
 .subscription-hotels p {
@@ -1871,12 +1928,16 @@ img {
 
 .mail-input {
   background-color: var(--body-bg-color);
-  font-family: inherit;
+  font-family: var(--font-family-basic), serif, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
   cursor: pointer;
+  color: var(--text-color-dark);
 }
 
 .mail-input::placeholder {
-  color: var(--text-color-dark);
+  color: var(--color-placeholder-one);
 }
 
 .mail-input:hover,
@@ -1898,7 +1959,11 @@ img {
   font-weight: 700;
   font-size: 20px;
   line-height: 36px;
+  box-sizing: border-box;
+  white-space: normal;
+  word-wrap: break-word;
 }
+
 
 .button-mail:hover {
   background-color: var(--bg-color-hover-one);
