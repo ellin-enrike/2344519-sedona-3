@@ -815,9 +815,10 @@ img {
   z-index: 2;
 }
 
+/*
 .modal-container-close {
   display: none;
-}
+} */
 
 .modal-auth {
   position: relative;
@@ -1026,6 +1027,10 @@ img {
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
+}
+
+.modal-number::placeholder {
+  color: var(--color-placeholder-one);
 }
 
 .tooltip-wrapper {
