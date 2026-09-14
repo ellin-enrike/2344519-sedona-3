@@ -815,10 +815,11 @@ img {
   z-index: 2;
 }
 
+/*
 
 .modal-container-close {
   display: none;
-}
+} */
 
 .modal-auth {
   position: relative;
@@ -1403,6 +1404,12 @@ img {
 .input[type="number"]::-webkit-inner-spin-button {
   appearance: none;
   margin: 0;
+}
+
+
+.input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .range-input:hover,
